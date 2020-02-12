@@ -5,7 +5,7 @@ class Node
 {
 private:
     int payload;
-    Node* nextNode;
+    Node* nextNode; //Node nextNode - java treats this as a Node* automatically
     
 public:
     Node(int payload);
