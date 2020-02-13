@@ -5,7 +5,8 @@ int main()
     LinkedList* ll = new LinkedList(); //some change
     ll->addFront(1);
     ll->addFront(2);
-    std::cout << ll->removeFront() << "\n";
+    ll->addEnd(3);
+    //std::cout << ll->removeFront() << "\n";
     ll->display();
     delete ll;
 }

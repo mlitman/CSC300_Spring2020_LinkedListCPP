@@ -39,6 +39,32 @@ int LinkedList::removeFront()
     return val;
 }
 
+void LinkedList::addEnd(int payload)
+{
+    if(!this->head)
+    {
+        this->addFront(payload);
+    }
+    else
+    {
+        //we have at least one thing in our list
+        //traverse to end of list and connect new node
+
+        Node* n = new Node(payload);
+        Node* currNode = this->head;
+        while(currNode->getNextNode()) //returns true when currNode has a next node
+        {
+            currNode = currNode->getNextNode(); // (*currNode).getNextNode()
+        }
+        //currNode now points to the end of our list (ie the last Node)
+        currNode->setNextNode(n);
+        this->count++;
+
+    }
+    
+    
+}
+
 void LinkedList::display()
 {
     Node* currNode = this->head;
