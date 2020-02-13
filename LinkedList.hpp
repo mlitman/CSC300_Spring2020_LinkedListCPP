@@ -7,6 +7,7 @@ class LinkedList
 private:
     Node* head;
     int count;
+    Node* runToEndOfList();
     
 public:
     LinkedList();
