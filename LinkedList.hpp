@@ -21,5 +21,7 @@ public:
     int getIndex(int index);
     int removeIndex(int index);
     void display();
+    void displayPointers();
+    void sort(); //re-arranges the linked list such that it is in ascending numerical order
 };
 #endif /* LinkedList_hpp */

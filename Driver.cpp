@@ -5,17 +5,14 @@
 int main()
 {
     std::srand(std::time(nullptr)); // use current time as seed for random generator
-    
-    int random_variable = std::rand();
-    LinkedList* ll = new LinkedList(); //some change
-    ll->addFront(1);
-    ll->addFront(2);
-    ll->addEnd(3);
-    ll->addAtIndex(1, 7);
-    //std::cout << ll->removeFront() << "\n";
-    
-    int val = ll->removeIndex(2);
-    std::cout<< std::time(nullptr) << "\n";
+    LinkedList* ll = new LinkedList();
+
+    for(int i = 0; i < 20; i++)
+    {
+        ll->addEnd(std::rand() % 1000);
+    }
     ll->display();
-    delete ll;
+    ll->sort();
+    std::cout << "*******************************************\n";
+    ll->display(); //it should now be sorted
 }
