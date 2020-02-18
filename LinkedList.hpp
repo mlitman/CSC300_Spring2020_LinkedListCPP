@@ -14,10 +14,12 @@ public:
     void addFront(int payload);
     int getFront();
     int removeFront();
-    //hw 3 methods below
     void addEnd(int payload);
     int getEnd();
     int removeEnd();
+    void addAtIndex(int index, int payload);
+    int getIndex(int index);
+    int removeIndex(int index);
     void display();
 };
 #endif /* LinkedList_hpp */

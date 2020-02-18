@@ -104,6 +104,83 @@ int LinkedList::removeEnd()
     
 }
 
+ void LinkedList::addAtIndex(int index, int payload)
+ {
+     if(index == 0)
+     {
+         this->addFront(payload);
+     }
+     else if(index == this->count)
+     {
+         this->addEnd(payload);
+     }
+     else
+     {
+         //we are placing somewhere in the middle
+         Node* n = new Node(payload);
+         Node* currNode = this->head;
+         for(int i = 0; i < index-1; i++)
+         {
+             currNode = currNode -> getNextNode();
+         }
+         //currNode points to the node right before where N should be inserted
+         n->setNextNode(currNode->getNextNode());
+         currNode->setNextNode(n);
+         this->count++;
+     }
+     
+ }
+    
+int LinkedList::getIndex(int index)
+{
+    if(index == 0)
+    {
+        return this->getFront();
+    }
+    else if(index == this->count-1)
+    {
+        return this->getEnd();
+    }
+    else
+    {
+        Node* currNode = this->head; //gives us a second pointers to the front of the list
+        for(int i = 0; i < index; i++)
+        {
+            currNode = currNode->getNextNode();
+        }
+        return currNode->getPayload();
+    }
+}
+ 
+int LinkedList::removeIndex(int index)
+{
+    if(index == 0)
+    {
+        return this->removeFront();
+    }
+    else if(index == this->count-1)
+    {
+        return this->removeEnd();
+    }
+    else
+    {
+        Node* currNode = this->head;
+        for(int i = 0; i < index-1; i++)
+        {
+            currNode = currNode->getNextNode();
+        }
+        Node* guy2Remove = currNode->getNextNode();
+        currNode->setNextNode(guy2Remove->getNextNode());
+        guy2Remove->setNextNode(0); //sets his next node to null
+        
+        int val2Return = guy2Remove->getPayload();
+        delete guy2Remove;
+        this->count--;
+        return val2Return;
+    }
+    
+}
+
 void LinkedList::display()
 {
     Node* currNode = this->head;

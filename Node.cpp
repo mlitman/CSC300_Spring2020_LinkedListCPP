@@ -2,6 +2,10 @@
 
 Node::Node(int payload)
 {
+    //this is a Node*
+    //(*this).payload
+    //(*0x123abc).payload
+    //this->payload
     this->payload = payload;
 }
 
