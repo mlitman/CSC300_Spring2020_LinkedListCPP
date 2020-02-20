@@ -8,6 +8,7 @@ private:
     Node* head;
     int count;
     Node* runToEndOfList();
+    Node* runToIndex(int index);
     
 public:
     LinkedList();
